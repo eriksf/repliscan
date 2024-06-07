@@ -18,4 +18,9 @@ setup(name = "repliscan",
 	author_email="gzynda@tacc.utexas.edu",
 	license="GNU",
 	description="Pipeline for calculating Repli-seq enrichment and classifying the time replication took place.",
+        install_requires=[
+          'numpy',
+          'scipy',
+          'matplotlib'
+        ],
 	scripts = ["repliscan.py","RATrap.py","wavelets"])
