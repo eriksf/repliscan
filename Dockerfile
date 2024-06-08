@@ -1,7 +1,8 @@
 FROM python:2.7.18-buster
 
 # Update the package repository and install required packages
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y \
     build-essential \
     gcc \
     make \
@@ -12,7 +13,11 @@ RUN apt-get update && apt-get install -y \
     unzip \
     libncurses5-dev \
     libncursesw5-dev \
-    bedtools
+    bedtools \
+    vim-tiny && \
+    apt-get autoremove -y && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # Install HTSLIB
 RUN wget https://github.com/samtools/htslib/releases/download/1.9/htslib-1.9.tar.bz2  && \
