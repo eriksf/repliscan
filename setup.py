@@ -28,5 +28,7 @@ setup(name = "repliscan",
         "repliscan_removing_blacklist.py",
         "repliscan_removing_blacklist_test.py",
         "RATrap.py",
+        "mergeRATs.py",
+        "flankingRegions.py",
         "wavelets"]
 )
