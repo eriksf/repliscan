@@ -51,7 +51,8 @@ RUN wget http://staff.washington.edu/dbp/WMTSA/NEPH/wavelets.tgz && \
   rm -r wavelets
 
 # install Repliscan
-RUN pip install git+https://github.com/eriksf/repliscan.git
+COPY . /repliscan
+RUN cd /repliscan && pip install .
 
 # Set a working directory
 WORKDIR /data
